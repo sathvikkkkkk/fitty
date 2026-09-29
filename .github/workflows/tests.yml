@@ -1,0 +1,25 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  selftest:
+    name: Core self-tests
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Swift version
+        run: swift --version
+
+      # Verifies the whole metric core without Xcode: PKCE against the
+      # RFC-7636 vector, DTO decoding with Google Health fixtures, every
+      # metric engine end-to-end on demo data, store roundtrip.
+      - name: Run self-tests
+        working-directory: SelfTest
+        run: swift run fittr-selftest

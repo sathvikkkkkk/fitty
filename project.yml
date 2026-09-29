@@ -1,0 +1,78 @@
+name: Fittr
+options:
+  bundleIdPrefix: com.fittr
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: "1.0"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+
+targets:
+  Fittr:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    scheme:
+      testTargets: []
+    dependencies:
+      - target: FittrWidget
+    entitlements:
+      path: App/Fittr.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.fittr.app
+    sources:
+      - path: App
+      - path: Core
+        excludes:
+          - Package.swift
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Fittr
+        UILaunchScreen: {}
+        UIUserInterfaceStyle: Dark
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        ITSAppUsesNonExemptEncryption: false
+        UIBackgroundModes:
+          - fetch
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.fittr.app.refresh
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.fittr.app
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_KEY_CFBundleDisplayName: Fittr
+
+  FittrWidget:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    entitlements:
+      path: FittrWidget/FittrWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.fittr.app
+    sources:
+      - path: FittrWidget
+    info:
+      path: FittrWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Fittr
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.fittr.app.widget
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_CFBundleDisplayName: Fittr

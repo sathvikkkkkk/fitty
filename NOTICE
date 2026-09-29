@@ -1,0 +1,43 @@
+Fittr
+Copyright 2026 Sathvik Jammula
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this project except in compliance with the License.
+A copy of the License is provided in the LICENSE file.
+
+--------------------------------------------------------------------------------
+Origin and modifications
+
+Fittr is a derivative work of "Pulse" (https://github.com/Luraxx/pulse),
+Copyright 2026 Luraxx, which is licensed under the Apache License, Version 2.0.
+The original copyright and attribution notice is retained here as the License
+requires.
+
+Modifications made by Sathvik Jammula (2026), all files changed accordingly:
+  - Renamed and rebranded (app, targets, package, identifiers, bundle IDs).
+  - Reworked the metric formulas: Banister-TRIMP strain, a bounded and shrunk
+    biological-age model, a composite sleep score, stress and cardio-load
+    estimates, and Google Health daily roll-ups for totals.
+  - Added nutrition logging with targets, workout logging with strength sets,
+    an AI coach and AI meal estimates (Apple on-device model or Claude).
+  - New black user interface; English only.
+
+--------------------------------------------------------------------------------
+Trademarks
+
+WHOOP is a trademark of WHOOP, Inc. Google, Fitbit, Fitbit Air and Google Health
+are trademarks of Google LLC. Apple and Apple Intelligence are trademarks of
+Apple Inc. Claude and Anthropic are trademarks of Anthropic, PBC. This project
+is an independent, non-commercial hobby project. It is NOT affiliated with,
+endorsed by, sponsored by, or connected to any of these companies. All product
+names are used only for descriptive purposes to explain what the app does and
+which services it reads from.
+
+--------------------------------------------------------------------------------
+Scientific references
+
+The metric methodology is derived from publicly published research, not from any
+third party's proprietary algorithms. Sources are cited in SETUP.md
+(FRIEND registry / Kaminsky 2015; Mandsager, JAMA Netw Open 2018; Uth 2004;
+Zhang, CMAJ 2016; Tanaka 2001; Karvonen; Banister 1991; Gabbett 2016;
+Mifflin-St Jeor 1990).

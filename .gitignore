@@ -1,0 +1,15 @@
+# Xcode
+DerivedData/
+xcuserdata/
+*.xcuserstate
+
+# SwiftPM
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
+
+# Build outputs
+build/
+*.ipa

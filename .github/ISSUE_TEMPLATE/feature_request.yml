@@ -1,0 +1,33 @@
+name: Idea or feature request
+description: Suggest a metric, a view or an improvement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to see?
+      placeholder: |
+        A stress monitor from intraday HRV deviation, similar to the
+        health monitor but during the day.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it useful?
+      description: >
+        What decision would it help you make? Fittr deliberately stays small,
+        so the bar is "I would look at this most days".
+    validations:
+      required: false
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Any source or reference?
+      description: >
+        For new metrics: a paper, an established formula or how another app
+        does it. Scores in Fittr are built on published research, not guesses.
+    validations:
+      required: false

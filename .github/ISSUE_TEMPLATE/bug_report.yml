@@ -1,0 +1,59 @@
+name: Bug report
+description: Something is broken, missing or shows a wrong number
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. The two most useful things are a screenshot
+        and, for sync problems, the matching line from the in-app sync log.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you see instead?
+      placeholder: |
+        Expected: recovery score for today
+        Saw: "calibrating" even though I have 20 nights of data
+    validations:
+      required: true
+
+  - type: textarea
+    id: sync-log
+    attributes:
+      label: Sync log line (for sync or missing-data problems)
+      description: >
+        In the app: More → Sync log. Copy the line of the affected metric.
+        The Google Health API is new (v4) and some data-type names are not
+        final, so a single error line often pins down the fix.
+      render: text
+      placeholder: 'Respiratory rate: HTTP 400: Invalid data type ID referenced ...'
+    validations:
+      required: false
+
+  - type: input
+    id: ios-version
+    attributes:
+      label: iOS version
+      placeholder: "iOS 17.5"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: data-source
+    attributes:
+      label: Data source
+      options:
+        - Real data (Google Health / Fitbit Air)
+        - Demo mode
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag an image in here if the problem is visual.
+    validations:
+      required: false
